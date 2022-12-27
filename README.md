@@ -120,7 +120,9 @@ fgdfshgikfshgkdhgiksfhgksdfhgkhgkdgh
     - SSH into the Prometheus instance either using your GitBash (Windows) or Terminal (macOS) or browser
     - Run the command: sudo vi /etc/prometheus/prometheus.yml
         - Navigate to "- targets: ['localhost:9090']" and add the "IPAddress:9100" for all the above Pipeline instances. Ecample "- targets: ['localhost:9090', 'DevIPAddress:9100', 'StageIPAddress:9100', 'ProdIPAddress:9100', 'Jenkins-Maven-AnsibleIPAddress:9100'] ETC..."
+        - Example ['localhost:9090', '3.129.248.237:9100', '18.219.199.141:9100', '3.145.145.209:9100', '18.224.173.92:9100', '52.14.103.94:9100', '18.117.179.79:9100']
         - Save the Config File and Quit
+        - Run: sudo systemctl restart prometheus
     - Open a TAB on your choice browser
     - Copy the Prometheus PublicIP Addres and paste on the browser/tab with port 9090 e.g "PrometheusPublicIPAddres:9090"
         - Once you get to the Prometheus Dashboard Click on "Status" and Click on "Targets"
