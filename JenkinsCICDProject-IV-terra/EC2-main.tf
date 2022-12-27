@@ -238,6 +238,10 @@ resource "aws_instance" "Nexus" {
       systemctl daemon-reload
       systemctl start nexus
       systemctl enable nexus
+
+      # Installing Git
+      sudo yum install git -y
+      ###  
     EOF
 
   tags = {
@@ -252,6 +256,14 @@ resource "aws_instance" "Dev-Env" {
   key_name      = "XXXXXXXXXXXX"
   subnet_id     = aws_subnet.Project-IV-VPC-Pub-sbn.id
   vpc_security_group_ids = [aws_security_group.Project-IV-SG.id]
+  user_data = <<-EOF
+      #!/bin/bash
+  
+      # Installing Git
+      sudo yum install git -y
+      ###  
+
+    EOF
 
   tags = {
     Name = "Dev-Env"
@@ -265,6 +277,14 @@ resource "aws_instance" "Stage-Env" {
   key_name      = "XXXXXXXXXXXX"
   subnet_id     = aws_subnet.Project-IV-VPC-Pub-sbn.id
   vpc_security_group_ids = [aws_security_group.Project-IV-SG.id]
+  user_data = <<-EOF
+      #!/bin/bash
+  
+      # Installing Git
+      sudo yum install git -y
+      ###  
+      
+    EOF
 
   tags = {
     Name = "Stage-Env"
@@ -278,6 +298,14 @@ resource "aws_instance" "Prod-Env" {
   key_name      = "XXXXXXXXXXXX"
   subnet_id     = aws_subnet.Project-IV-VPC-Pub-sbn.id
   vpc_security_group_ids = [aws_security_group.Project-IV-SG.id]
+  user_data = <<-EOF
+      #!/bin/bash
+  
+      # Installing Git
+      sudo yum install git -y
+      ###  
+      
+    EOF
 
   tags = {
     Name = "Prod-Env"
