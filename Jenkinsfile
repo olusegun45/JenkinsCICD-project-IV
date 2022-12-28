@@ -68,10 +68,10 @@ pipeline {
             
             withSonarQubeEnv('SonarQube') {
             sh '''
-            mvn sonar:sonar \
-          -Dsonar.projectKey=JavaWebApp \
-          -Dsonar.host.url=http://172.31.27.36:9000 \
-          -Dsonar.login=49c9b18dbd60133d4772fbd100ed88f777d7d041
+               mvn sonar:sonar \
+              -Dsonar.projectKey=JavaWebApp \
+              -Dsonar.host.url=http://10.0.0.220:9000 \
+              -Dsonar.login=70bf6200d97105b7e5427a0286f8c4873def6e8e
 
             '''
             }
