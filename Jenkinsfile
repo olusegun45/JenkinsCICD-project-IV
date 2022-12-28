@@ -9,7 +9,7 @@ pipeline {
     
     tools {
         maven 'mymaven'
-        jdk 'localJdk'
+        jdk 'myjava'
     }
     
     environment {
