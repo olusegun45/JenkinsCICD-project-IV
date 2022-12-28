@@ -8,7 +8,7 @@ pipeline {
     
     
     tools {
-        maven 'localMaven'
+        maven 'mymaven'
         jdk 'localJdk'
     }
     
